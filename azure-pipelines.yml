@@ -19,13 +19,3 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: AzureResourceGroupDeployment@2
-  displayName: 'Deploy template'
-  inputs:
-    azureSubscription: '5593fe80-118e-4018-9b5f-366b7a8f5741'
-    resourceGroupName: azuredevopsRG
-    location: 'centralus'
-    templateLocation: 'URL of the file'
-    csmFileLink: '$(artifactsLocation)WebSite.json$(artifactsLocationSasToken)'
-    csmParametersFileLink: '$(artifactsLocation)WebSite.parameters.json$(artifactsLocationSasToken)'
-    overrideParameters: '-_artifactsLocation $(artifactsLocation) -_artifactsLocationSasToken "$(artifactsLocationSasToken)"'
